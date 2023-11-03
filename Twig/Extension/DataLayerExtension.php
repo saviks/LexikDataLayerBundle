@@ -7,7 +7,7 @@ use Lexik\Bundle\DataLayerBundle\Manager\DataLayerManager;
 /**
  * DataLayerExtension
  */
-class DataLayerExtension extends \Twig_Extension
+class DataLayerExtension extends \Twig\Extension\AbstractExtension
 {
     /**
      * @var DataLayerManager
@@ -39,7 +39,7 @@ class DataLayerExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('lexik_data_layer', [$this, 'getDataLayer'], ['is_safe' => ['html']]),
+            new \Twig\TwigFunction('lexik_data_layer', [$this, 'getDataLayer'], ['is_safe' => ['html']]),
         ];
     }
 
